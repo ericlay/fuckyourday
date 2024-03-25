@@ -1,0 +1,572 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="js/destruct.js"></script>
+		<title>wildflat Website Template | Shortcodes :: w3layouts</title>
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
+		<!----webfonts---->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<!----//webfonts---->
+		<!---script---->
+		<script src="js/jquery.min.js"></script>
+		<!---//script---->
+		<!-----768px-menu----->
+		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+		<script type="text/javascript" src="js/jquery.mmenu.js"></script>
+			<script type="text/javascript">
+				//	The menu on the left
+				$(function() {
+					$('nav#menu-left').mmenu();
+				});
+		</script>
+		<!-----//768px-menu----->
+		 <!---strat-slider---->
+	    <link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
+		<!---//strat-slider---->
+	</head>
+	<body>
+		<!----start-wrap---->
+		<!------start-768px-menu---->
+			<div id="page">
+					<div id="header">
+						<a class="navicon" href="#menu-left"> </a>
+					</div>
+					<nav id="menu-left">
+						<ul>
+							<li class="active"><a href="#work">Work</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#services">Services</a></li>
+							<li><a href="#news">News</a></li>
+							<li><a href="#contact">Contact</a></li>
+							<li><a href="blog.html">Blog</a></li>
+						</ul>
+					</nav>
+			</div>
+		<!------start-768px-menu---->
+			<!----start-header---->
+			<div class="header" id="move-top">
+				<div class="wrap">
+				<div class="header-left">
+					<!----start-logo---->
+					<div class="logo">
+						<a href="index.html"><img src="images/logo.png" title="wildflat" /> </a>
+					</div>
+					<!----//End-logo---->
+				</div>
+				<div class="header-right">
+					<!----start-top-nav---->
+					<div class="top-nav">
+						<ul>
+							<li class="active"><a href="#work">Work</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#services">Services</a></li>
+							<li><a href="#news">News</a></li>
+							<li><a href="#contact">Contact</a></li>
+							<li><a href="blog.html">Blog</a></li>
+						</ul>
+					</div>
+					<!----//End-top-nav---->
+					<!----start-search-box--->
+					<div class="search">
+						<div class="search-box">
+							<div id="sb-search" class="sb-search">
+								<form>
+									<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+									<input class="sb-search-submit" type="submit" value="">
+									<span class="sb-icon-search"> </span>
+								</form>
+							</div>
+						</div>
+						<!----search-scripts---->
+						<script src="js/modernizr.custom.js"></script>
+						<script src="js/classie.js"></script>
+						<script src="js/uisearch.js"></script>
+						<script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+						</script>
+						<!----//search-scripts---->
+					</div>
+					</div>
+					<!----//End-search-box--->
+					<div class="clear"> </div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			<!----//End-header---->
+			<!----start-blog---->
+			<div class="blog">
+				<div class="wrap">
+					<div class="blog-left">
+						<div class="blog-left-head">
+							<span> </span>
+							<h1>SHORTCODES</h1>
+						</div>
+						<!----start-shortcode-grids---->
+						<div class="shortcode-grids">
+							<div class="shortcode-grids-row1">
+								<div class="shortcode-grid-row1">
+									<script type="text/javascript">
+										/*jQuery time*/
+											$(document).ready(function(){
+												$("#accordian h3").click(function(){
+													//slide up all the link lists
+													$("#accordian ul ul").slideUp();
+													//slide down the link list below the h3 clicked - only if its closed
+													if(!$(this).next().is(":visible"))
+													{
+														$(this).next().slideDown();
+													}
+												})
+											})
+									</script>
+									<div id="accordian">
+										<ul>
+											<li class="active">
+												<h3>Accordion1</h3>
+												<ul>
+													<li><p>Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusm tempor incididunt ut labore et dolor magna aliqua.</p></li>
+												</ul>
+											</li>
+											<!-- we will keep this LI open by default -->
+											<li>
+												<h3>Accordion2</h3>
+												<ul>
+													<li><p>Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusm tempor incididunt ut labore et dolor magna aliqua.</p></li>
+												</ul>
+											</li>
+											<li>
+												<h3>Accordion3</h3>
+												<ul>
+													<li><p>Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusm tempor incididunt ut labore et dolor magna aliqua.</p></li>
+												</ul>
+											</li>
+											<li>
+												<h3>Accordion4</h3>
+												<ul>
+													<li><p>Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusm tempor incididunt ut labore et dolor magna aliqua.</p></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+									<!-- prefix free to deal with vendor prefixes -->
+								</div><!---end-shortcode-grid-row1--->
+								<div class="shortcode-grid-row1">
+									<div class="alert1">
+										<div class="alert1-left">
+											<p><span>Error</span> - Your Alert!</p>
+										</div>
+										<div class="alert1-right">
+											<a href="#"><span> </span></a>
+										</div>
+										<div class="clear"> </div>
+									</div><!---end-alert1---->
+									<div class="alert2">
+										<div class="alert2-left">
+											<p><span>Info </span> - Your Alert!</p>
+										</div>
+										<div class="alert2-right">
+											<a href="#"><span> </span></a>
+										</div>
+										<div class="clear"> </div>
+									</div><!---end-alert2---->
+									<div class="alert3">
+										<div class="alert3-left">
+											<p><span>Succes</span> - Your Alert!</p>
+										</div>
+										<div class="alert3-right">
+											<a href="#"><span> </span></a>
+										</div>
+										<div class="clear"> </div>
+									</div><!---end-alert3--->
+									<div class="alert4">
+										<div class="alert4-left">
+											<p><span>Notice</span> - Your Alert!</p>
+										</div>
+										<div class="alert4-right">
+											<a href="#"><span> </span></a>
+										</div>
+										<div class="clear"> </div>
+									</div><!---end-alert4---->
+								</div><!---end-shortcode-grid-row1--->
+								<div class="shortcode-grid-row1">
+									 <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+									 <script type="text/javascript">
+									    $(document).ready(function () {
+									        $('#horizontalTab').easyResponsiveTabs({
+									            type: 'default', //Types: default, vertical, accordion           
+									            width: 'auto', //auto or any width like 600px
+									            fit: true,   // 100% fit in a container
+									            closed: 'accordion', // Start closed if in accordion view
+									            activate: function(event) { // Callback function if tab is switched
+									                var $tab = $(this);
+									                var $info = $('#tabInfo');
+									                var $name = $('span', $info);
+									
+									                $name.text($tab.text());
+									
+									                $info.show();
+									            }
+									        });
+									    });
+									</script>
+									 <!--Horizontal Tab-->
+								        <div id="horizontalTab">
+								            <ul class="resp-tabs-list">
+								                <li>First</li>
+								                <li class="not-active">Second</li>
+								            </ul>
+								            <div class="resp-tabs-container">
+								                <div>
+								                	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl orcicondim entum ultrices consequa eu vehicula ac mauris.  Ut adipiscingleo nec. Lorem ipsum dolor sit amet consectetur</p>
+								                </div>
+								                <div>
+								                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl orcicondim entum ultrices consequa eu vehicula ac mauris.  Ut adipiscingleo nec. Lorem ipsum dolor sit amet consectetur</p>
+								                </div>
+								            </div>
+								        </div>
+								</div><!---end-shortcode-grid-row1--->
+							</div>
+							<div class="clear"> </div>
+							<div class="shortcode-grids-row2">
+								<div class="shortcode-grid-row2">
+									<ul class="arows">
+										<li class="icon01"><p><span> </span>Arrow List - Aenean nisl orci</p></li>
+										<li class="icon02"><p><span> </span>Arrow List2 -  Lorem ipsum dolor</p></li>
+										<li class="icon03"><p><span> </span>Arrow List3 - Consecteteur adipiscing</p></li>
+										<li class="icon04"><p><span> </span>Arrow List4 - Aenean nisl orci</p></li>
+										<li class="icon05"><p><span> </span>Arrow List5 - Lorem ipsum dolor</p></li>
+										<li class="icon06"><p><span> </span>Arrow List6 - Consecteteur adipiscing</p></li>
+									</ul>
+								</div><!---//End-shortcode-grid-row2---->
+								<div class="shortcode-grid-row2">
+									<div class="shortcode-info-box">
+										<p>It's an info box! Your title goes here.</p>
+										<a href="#">PURCHAISE IT NOW</a>
+									</div>
+								</div><!---//End-shortcode-grid-row2---->
+								<div class="shortcode-grid-row2">
+									<p class="lpara">
+										Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Aenean nisl orcicondim entum ultrices consequa eu vehicula ac mauris.  Ut adipiscingleo nec. Lorem ipsum dolor sit amet consectetur.
+									</p>
+								</div><!---//End-shortcode-grid-row2---->
+								<div class="clear"> </div>
+							</div><!---end-shortcode-grids-row2--->
+							<div class="shortcode-grids-row3">
+								<h4>Big Buttons</h4>
+								<div class="shortcode-grid-row3">
+									<ul class="blue-btns">
+										<li class="blue-btn-normal"><input type="button" value="PURCHAISE IT NOW" /></li>
+										<li class="blue-btn-hover"><input type="button" value="PURCHAISE IT NOW" /></li>
+										<li class="blue-btn-active"><input type="button" value="PURCHAISE IT NOW" /></li>
+									</ul>
+							</div><!---end-shortcode-grids-row3--->
+							<div class="shortcode-grid-row3">
+									<ul class="gray-btns">
+										<li class="gray-btn-normal"><input type="button" value="PURCHAISE IT NOW" /></li>
+										<li class="gray-btn-hover"><input type="button" value="PURCHAISE IT NOW" /></li>
+										<li class="gray-btn-active"><input type="button" value="PURCHAISE IT NOW" /></li>
+									</ul>
+							</div><!---end-shortcode-grids-row3--->
+							<div class="shortcode-grid-row3">
+									<ul class="drak-btns">
+										<li class="drak-btn-normal"><input type="button" value="PURCHAISE IT NOW" /></li>
+										<li class="drak-btn-hover"><input type="button" value="PURCHAISE IT NOW" /></li>
+										<li class="drak-btn-active"><input type="button" value="PURCHAISE IT NOW" /></li>
+									</ul>
+							</div><!---end-shortcode-grids-row3--->
+							<div class="clear"> </div>
+						</div>
+						<div class="shortcode-grids-row4">
+							<div class="shortcode-grid-row4">
+								<h4>Standart Buttons</h4>
+								<ul class="b-left">
+									<li class="b-left-btn-normal"><input type="button" value="PURCHAISE IT NOW" /></li>
+									<li class="b-left-btn-hover"><input type="button" value="PURCHAISE IT NOW" /></li>
+									<li class="b-left-btn-active"><input type="button" value="PURCHAISE IT NOW" /></li>
+								</ul>
+								<ul class="g-right">
+									<li class="g-left-btn-normal"><input type="button" value="PURCHAISE IT NOW" /></li>
+									<li class="g-left-btn-hover"><input type="button" value="PURCHAISE IT NOW" /></li>
+									<li class="g-left-btn-active"><input type="button" value="PURCHAISE IT NOW" /></li>
+								</ul>
+								<div class="clear"> </div>
+							</div><!---//End-shortcode-grid-row4---->
+						</div><!---End-shortcode-grids-row4--->
+						<div class="clear"> </div>
+						<!----start-shart-code-para---->
+						<div class="short-codepara">
+							<div class="short-codepara-grid">
+								<div class="short-codepara-grid-head1">
+									<span> </span>
+									<h1>H1 Title</h1>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+							</div>
+							<div class="short-codepara-grid">
+								<div class="short-codepara-grid-head2">
+									<span> </span>
+									<h2>H2 Title</h2>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+							</div>
+							<div class="short-codepara-grid">
+								<div class="short-codepara-grid-head3">
+									<span> </span>
+									<h3>H3 Title</h3>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+							</div>
+							<div class="short-codepara-grid">
+								<div class="short-codepara-grid-head4">
+									<span> </span>
+									<h4>H4 Title</h4>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+							</div>
+							<div class="short-codepara-grid">
+								<div class="short-codepara-grid-head5">
+									<span> </span>
+									<h5>H5 Title</h5>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+							</div>
+							<div class="short-codepara-grid">
+								<div class="short-codepara-grid-head6">
+									<span> </span>
+									<h6>H6 Title</h6>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+							</div>
+						</div>
+						<!----//End-shart-code-para---->
+						<!----//End-shortcode-grids---->
+					</div>
+					</div>
+					<div class="blog-right">
+						<div class="blog-right-head">
+							<span> </span>
+							<h3>CaTEGORIES</h3>
+						</div>
+						<!----start-accordinatio-files--->
+						<script src="js/vallenato.js" type="text/javascript" charset="utf-8"></script>
+						<link rel="stylesheet" href="css/vallenato.css" type="text/css" media="screen" charset="utf-8">
+						<!----start-accordinatio-files--->
+						<div class="blog-right-accordinations">
+							<h2 class="accordion-header">Webdesign</h2>
+							<div class="accordion-content">
+								<ul>
+									<li><a href="#">adipiscing elit.</a></li>
+									<li><a href="#">consectetur </a></li>
+									<li><a href="#">Pellentesque </a></li>
+									<li><a href="#">sollicitudin felis </a></li>
+								</ul>
+							</div>
+							<h2 class="accordion-header">Art design</h2>
+							<div class="accordion-content">
+								<ul>
+									<li><a href="#">adipiscing elit.</a></li>
+									<li><a href="#">consectetur </a></li>
+									<li><a href="#">Pellentesque </a></li>
+									<li><a href="#">sollicitudin felis </a></li>
+								</ul>
+							</div>
+							<h2 class="accordion-header">Logotypes</h2>
+							<div class="accordion-content">
+								<ul>
+									<li><a href="#">adipiscing elit.</a></li>
+									<li><a href="#">consectetur </a></li>
+									<li><a href="#">Pellentesque </a></li>
+									<li><a href="#">sollicitudin felis </a></li>
+								</ul>
+							</div>
+							<h2 class="accordion-header">Photography</h2>
+							<div class="accordion-content">
+								<ul>
+									<li><a href="#">adipiscing elit.</a></li>
+									<li><a href="#">consectetur </a></li>
+									<li><a href="#">Pellentesque </a></li>
+									<li><a href="#">sollicitudin felis </a></li>
+								</ul>
+							</div>
+							<h2 class="accordion-header">Videos</h2>
+							<div class="accordion-content">
+								<ul>
+									<li><a href="#">adipiscing elit.</a></li>
+									<li><a href="#">consectetur </a></li>
+									<li><a href="#">Pellentesque </a></li>
+									<li><a href="#">sollicitudin felis </a></li>
+								</ul>
+							</div>
+							<h2 class="accordion-header">Other</h2>
+							<div class="accordion-content">
+								<ul>
+									<li><a href="#">adipiscing elit.</a></li>
+									<li><a href="#">consectetur </a></li>
+									<li><a href="#">Pellentesque </a></li>
+									<li><a href="#">sollicitudin felis </a></li>
+								</ul>
+							</div>
+						</div>
+						<!----start-tags---->
+						<div class="blog-right-head">
+							<span> </span>
+							<h3>Tag's</h3>
+						</div>
+						<div class="tags-for">
+									<ul>
+										<li><a href="#">Art</a></li>
+										<li><a href="#">WebDesign</a></li>
+										<li><a href="#">Logotypes</a></li>
+										<li><a href="#">Photo</a></li>
+										<li><a href="#">Video</a></li>
+										<li><a href="#">Other</a></li>
+										<li><a href="#">WEb</a></li>
+										<div class="clear"> </div>
+									</ul>
+						</div>
+						<!----//End-tags---->
+						<!----start-comments---->
+						<div class="blog-comments">
+							<div class="blog-right-head">
+								<span> </span>
+								<h3>Last Comments</h3>
+							</div>
+							<div class="blog-comment-grids">
+								<div class="blog-comment-grid">
+									<div class="blog-comment-grid-left">
+										<img src="images/admin-pic1.jpg" alt="" />
+									</div>
+									<div class="blog-comment-grid-right">
+										<a href="#">Endy Brown</a>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+									</div>
+									<div class="clear"> </div>
+								</div>
+								<div class="blog-comment-grid">
+									<div class="blog-comment-grid-left">
+										<img src="images/admin-pic2.jpg" alt="" />
+									</div>
+									<div class="blog-comment-grid-right">
+										<a href="#">Millana Watson</a>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+									</div>
+									<div class="clear"> </div>
+								</div>
+								<div class="blog-comment-grid">
+									<div class="blog-comment-grid-left">
+										<img src="images/admin-pic3.jpg" alt="" />
+									</div>
+									<div class="blog-comment-grid-right">
+										<a href="#">Andrew Haching</a>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+									</div>
+									<div class="clear"> </div>
+								</div>
+								<div class="blog-comment-grid">
+									<div class="blog-comment-grid-left">
+										<img src="images/admin-pic4.jpg" alt="" />
+									</div>
+									<div class="blog-comment-grid-right">
+										<a href="#">Bruse Loome</a>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+									</div>
+									<div class="clear"> </div>
+								</div>
+							</div>
+						</div>
+						<!----start-Comments---->
+					</div>
+					<div class="clear"> </div>
+				</div>
+			</div>
+			<!----//End-blog---->
+			<!----start-contact---->
+			<div class="contact" id="contact">
+				<div class="wrap">
+					<div class="contact-left">
+						<div class="contact-head">
+								<span> </span>
+								<h3>Contact US</h3>
+						</div>
+						<form>
+							<div class="form-left">
+								<input type="text" placeholder="Name" required />
+								<input type="text" placeholder="Email" required />
+								<input type="text" placeholder="Phone" required />
+							</div>
+							<div class="form-right">
+								<textarea rows="2" cols="70" onfocus="if(this.value == 'Comment') this.value='';" onblur="if(this.value == '') this.value='Comment';" >Comment</textarea>
+							</div>
+							<div class="clear"> </div>
+							<input type="submit" value="Send latter" />
+							<div class="clear"> </div>
+						</form>
+					</div>
+					<div class="contact-right">
+						<div class="contact-head">
+								<span> </span>
+								<h3>FLICKR STREAM</h3>
+						</div>
+						<div class="flicker-grids">
+							<ul>
+								<li><a href="#"><img src="images/f1.jpg" alt="" /></a></li>
+								<li><a href="#"><img src="images/f2.jpg" alt="" /></a></li>
+								<li><a href="#"><img src="images/f3.jpg" alt="" /></a></li>
+								<li><a href="#"><img src="images/f4.jpg" alt="" /></a></li>
+								<li><a href="#"><img src="images/f5.jpg" alt="" /></a></li>
+								<li><a href="#"><img src="images/f6.jpg" alt="" /></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="clear"> </div>
+				</div>
+			</div>
+			<!----//End-contact---->
+			<!---- start-footer---->
+			<div class="footer">
+				<div class="wrap"> 
+				<div class="footer-left">
+					<h2>FANKS FOR WATCHING, <span>I hope you enjoyed it</span></h2>
+				</div>
+				<div class="footer-right">
+					<ul>
+						<li><a class="youtube" href="#"><span> </span></a></li>
+						<li><a class="skye" href="#"><span> </span></a></li>
+						<li><a class="flicker" href="#"><span> </span></a></li>
+						<li><a class="rss" href="#"><span> </span></a></li>
+						<li><a class="twitter" href="#"><span> </span></a></li>
+						<li><a class="dribbble" href="#"><span> </span></a></li>
+						<div class="clear"> </div>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+				</div>
+			</div>
+			<!---- //End-footer---->
+			<!----start-copy-right---->
+			<div class="copy-right">
+				<div class="wrap">
+					<p>Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+					<script type="text/javascript">
+							$(document).ready(function() {
+								$().UItoTop({ easingType: 'easeOutQuart' });
+							});
+						</script>
+				    <a href="#move-top" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"> </span></a>
+				</div>
+			</div>
+			<!----//End-copy-right---->
+		<!----//End-wrap---->
+	</body>
+</html>
+
