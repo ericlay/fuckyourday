@@ -1,3 +1,8 @@
+body {
+  background: #222222;
+  overflow: hidden;
+}
+
 .screen {
   position: absolute;
   overflow: hidden;
