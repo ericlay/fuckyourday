@@ -1,8 +1,13 @@
 import os
+import uuid
 import random
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, request
 
 app = Flask(__name__)
+
+# Implement count to load specific page on Nth
+request_count = 0
+unique_requests = set()
 
 # Script must run from root dir containing all websites dirs 
 # OR change the ROOT_DIR path below :)
@@ -24,7 +29,13 @@ def static_proxy(filename):
 @app.route('/', methods=['GET'])
 def index():
     current_website_dir()
-    return send_from_directory(website_dir, 'index.html')
+    global request_count
+    request_count += 1
+
+    if request_count % 5 == 0:
+        return send_from_directory(str(ROOT_DIR+"Marvel/"), 'index.html')
+    else:
+        return send_from_directory(website_dir, 'index.html')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
