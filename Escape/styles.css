@@ -1,0 +1,93 @@
+.screen {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #222222;
+}
+
+.terminal_emulator {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 100%;
+
+  padding: 40px;
+  font-size: 20px;
+  line-heght: 25px;
+  box-sizing: border-box;
+  text-align: left;
+
+  font-family: monospace;
+  font-weight: 700;
+
+  color: #80e69a;
+}
+
+.terminal_emulator__field,
+.terminal_emulator__command {
+  position: relative;
+
+  padding: 0 1em;
+  margin: 0 0 9px 0;
+
+  &:before,
+  &:after {
+    position: absolute;
+  }
+
+  &:before {
+    left: 0;
+    top: 0;
+    content: ">";
+  }
+}
+
+.terminal_emulator__response,
+.terminal_emulator__command b {
+  padding-bottom: 9px;
+}
+
+.terminal_emulator__field {
+  display: inline-block;
+  min-width: 1em;
+  min-height: 1.5em;
+  box-sizing: border-box;
+  &:after {
+    right: 0;
+    bottom: 0.25em;
+
+    content: "";
+    width: 1em;
+    height: 1.5em;
+    background: #99ff99;
+
+    animation: caretBlink 1s infinite;
+  }
+
+  &.waiting {
+    padding-left: 0;
+    padding-right: 0;
+    &:before {
+      display: none;
+    }
+  }
+}
+
+@keyframes caretBlink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  51% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
