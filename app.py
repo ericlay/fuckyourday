@@ -22,14 +22,17 @@ def current_website_dir():
     if request_count % 5 == 0:
         global website_dir
         website_dir = str(ROOT_DIR+"/Marvel")
+    elif request_count % 6 == 0:
+        website_dir = str(ROOT_DIR+"/Escape")
     else:
         global WEBSITE_DIRS
         try:
+            WEBSITE_DIRS.remove('Escape')
             WEBSITE_DIRS.remove('Marvel')
-        except ValueError:
+        except (ValueError, IndexError) as e:
             pass
         website_dir = random.choice(WEBSITE_DIRS)
-        
+
 # Make static files available
 @app.route('/<path:filename>', methods=['GET'])
 def static_proxy(filename):
