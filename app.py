@@ -13,7 +13,6 @@ unique_requests = set()
 # OR change the ROOT_DIR path below :)
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 WEBSITE_DIRS = [name for name in os.listdir(ROOT_DIR) if not name.startswith('.') and os.path.isdir(os.path.join(ROOT_DIR, name))]
-print(ROOT_DIR)
 
 # Site choosing logic
 website_dir = None
@@ -24,8 +23,13 @@ def current_website_dir():
         global website_dir
         website_dir = str(ROOT_DIR+"/Marvel")
     else:
+        global WEBSITE_DIRS
+        try:
+            WEBSITE_DIRS.remove('Marvel')
+        except ValueError:
+            pass
         website_dir = random.choice(WEBSITE_DIRS)
-
+        
 # Make static files available
 @app.route('/<path:filename>', methods=['GET'])
 def static_proxy(filename):
