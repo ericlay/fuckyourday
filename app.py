@@ -16,18 +16,19 @@ WEBSITE_DIRS = [name for name in os.listdir(ROOT_DIR) if not name.startswith('.'
 # Site choosing logic
 def current_website_dir():
     session.pop('website_dir', None)
-    if session['requests'] % 5 == 0:
-        session['website_dir'] = (os.path.join(ROOT_DIR, 'Marvel'))
-    elif session['requests'] % 6 == 0:
-        session['website_dir'] = (os.path.join(ROOT_DIR, 'Escape'))
-        session.pop('requests', None)
-    else:
-        try:
-            WEBSITE_DIRS.remove(os.path.join(ROOT_DIR, 'Marvel'))
-            WEBSITE_DIRS.remove(os.path.join(ROOT_DIR, 'Escape'))
-        except (ValueError, IndexError) as e:
-            pass
-        session['website_dir'] = random.choice(WEBSITE_DIRS)
+    match session['requests']:
+        case 5:
+            session['website_dir'] = (os.path.join(ROOT_DIR, 'Marvel'))
+        case 6:
+            session['website_dir'] = (os.path.join(ROOT_DIR, 'Escape'))
+            session.pop('requests', None)
+        case _:
+            try:
+                WEBSITE_DIRS.remove(os.path.join(ROOT_DIR, 'Escape'))
+                WEBSITE_DIRS.remove(os.path.join(ROOT_DIR, 'Marvel'))
+            except (ValueError, IndexError) as e:
+                pass
+            session['website_dir'] = random.choice(WEBSITE_DIRS)
 
 # Make static files available
 @app.route('/<path:filename>', methods=['GET'])
