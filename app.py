@@ -17,10 +17,9 @@ WEBSITE_DIRS = [name for name in os.listdir(ROOT_DIR) if not name.startswith('.'
 website_dir = None
 def current_website_dir():
     if session['requests'] % 5 == 0:
-        global website_dir
-        website_dir = str(ROOT_DIR+"/Marvel")
+        session['website_dir'] = str(ROOT_DIR+"/Marvel")
     elif session['requests'] % 6 == 0:
-        website_dir = str(ROOT_DIR+"/Escape")
+        session['website_dir'] = str(ROOT_DIR+"/Escape")
         session.pop('requests', None)
     else:
         global WEBSITE_DIRS
@@ -29,12 +28,12 @@ def current_website_dir():
             WEBSITE_DIRS.remove(os.path.isdir(os.path.join(ROOT_DIR, 'Marvel')))
         except (ValueError, IndexError) as e:
             pass
-        website_dir = random.choice(WEBSITE_DIRS)
+        session['website_dir'] = random.choice(WEBSITE_DIRS)
 
 # Make static files available
 @app.route('/<path:filename>', methods=['GET'])
 def static_proxy(filename):
-    return send_from_directory(website_dir, filename)
+    return send_from_directory(session['website_dir'], filename)
 
 # Serve site index.html
 @app.route('/', methods=['GET'])
@@ -44,7 +43,7 @@ def index():
     else:
         session['requests'] = 1
     current_website_dir()
-    return send_from_directory(website_dir, 'index.html')
+    return send_from_directory(session['website_dir'], 'index.html')
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
