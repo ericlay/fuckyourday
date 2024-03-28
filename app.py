@@ -10,7 +10,9 @@ def current_website_dir():
     # Script must run from root dir containing all websites dirs 
     # OR change the ROOT_DIR path :)
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-    WEBSITE_DIRS = [name for name in os.listdir(ROOT_DIR) if not name.startswith('.') and os.path.isdir(os.path.join(ROOT_DIR, name))]
+    WEBSITE_DIRS = [name for name in os.listdir(ROOT_DIR)
+                    if not name.startswith('.')
+                    and os.path.isdir(os.path.join(ROOT_DIR, name))]
     session.pop('website_dir', None) # Clear website_dir if exist
     match session['requests']: #Match Nth page request
         case 5:
@@ -34,7 +36,7 @@ def static_proxy(filename):
     try:
         return send_from_directory(session['website_dir'], filename)
     except KeyError:
-        return render_template('404.html')
+        return render_template('404.html'),404
 
 @app.route('/', methods=['GET']) # Serve site index.html
 def index():
@@ -46,11 +48,11 @@ def index():
     try:
         return send_from_directory(session['website_dir'], 'index.html')
     except KeyError:
-        return render_template('404.html')
+        return render_template('404.html'),404
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html')
+    return render_template('404.html'),404
 
 if __name__ == "__main__":
     app.run()
