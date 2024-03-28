@@ -16,6 +16,7 @@ WEBSITE_DIRS = [name for name in os.listdir(ROOT_DIR) if not name.startswith('.'
 # Site choosing logic
 website_dir = None
 def current_website_dir():
+    session.pop('website_dir', None)
     if session['requests'] % 5 == 0:
         session['website_dir'] = str(ROOT_DIR+"/Marvel")
     elif session['requests'] % 6 == 0:
@@ -46,4 +47,4 @@ def index():
     return send_from_directory(session['website_dir'], 'index.html')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
