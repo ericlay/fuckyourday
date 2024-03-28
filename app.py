@@ -14,7 +14,6 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 WEBSITE_DIRS = [name for name in os.listdir(ROOT_DIR) if not name.startswith('.') and os.path.isdir(os.path.join(ROOT_DIR, name))]
 
 # Site choosing logic
-website_dir = None
 def current_website_dir():
     session.pop('website_dir', None)
     if session['requests'] % 5 == 0:
@@ -23,7 +22,6 @@ def current_website_dir():
         session['website_dir'] = (os.path.join(ROOT_DIR, 'Escape'))
         session.pop('requests', None)
     else:
-        global WEBSITE_DIRS
         try:
             WEBSITE_DIRS.remove(os.path.join(ROOT_DIR, 'Marvel'))
             WEBSITE_DIRS.remove(os.path.join(ROOT_DIR, 'Escape'))
