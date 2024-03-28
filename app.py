@@ -1,15 +1,19 @@
 import os
 import random
-from flask import Flask, send_from_directory, session
+from flask import Flask, send_from_directory, session, Blueprint, render_template
 
 app = Flask(__name__)
 app.secret_key = '420-69-LOL' # For using client side session cookies
+# Script must run from root dir containing all websites dirs 
+# OR change the ROOT_DIR path :)
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+# Point jinja to templates
+site = Blueprint('site', __name__, template_folder='Templates')
 
 # Site choosing logic
 def current_website_dir():
     # Script must run from root dir containing all websites dirs 
     # OR change the ROOT_DIR path :)
-    ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     WEBSITE_DIRS = [name for name in os.listdir(ROOT_DIR) if not name.startswith('.') and os.path.isdir(os.path.join(ROOT_DIR, name))]
     session.pop('website_dir', None) # Clear website_dir if exist
     match session['requests']: #Match Nth page request
@@ -25,11 +29,16 @@ def current_website_dir():
                         WEBSITE_DIRS.remove(dir)
                     case 'Marvel':    
                         WEBSITE_DIRS.remove(dir)
+                    case 'Templates':
+                        WEBSITE_DIRS.remove(dir)
             session['website_dir'] = random.choice(WEBSITE_DIRS)
 
 @app.route('/<path:filename>', methods=['GET']) # Make static files available
 def static_proxy(filename):
-    return send_from_directory(session['website_dir'], filename)
+    try:
+        return send_from_directory(session['website_dir'], filename)
+    except KeyError:
+        return render_template('404.html')
 
 @app.route('/', methods=['GET']) # Serve site index.html
 def index():
@@ -38,7 +47,14 @@ def index():
     else:
         session['requests'] = 1
     current_website_dir() # Choose website dir
-    return send_from_directory(session['website_dir'], 'index.html')
+    try:
+        return send_from_directory(session['website_dir'], 'index.html')
+    except KeyError:
+        return render_template('404.html')
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html')
 
 if __name__ == "__main__":
     app.run()
