@@ -4,16 +4,12 @@ from flask import Flask, send_from_directory, session, Blueprint, render_templat
 
 app = Flask(__name__)
 app.secret_key = '420-69-LOL' # For using client side session cookies
-# Script must run from root dir containing all websites dirs 
-# OR change the ROOT_DIR path :)
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-# Point jinja to templates
-site = Blueprint('site', __name__, template_folder='Templates')
 
 # Site choosing logic
 def current_website_dir():
     # Script must run from root dir containing all websites dirs 
     # OR change the ROOT_DIR path :)
+    ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     WEBSITE_DIRS = [name for name in os.listdir(ROOT_DIR) if not name.startswith('.') and os.path.isdir(os.path.join(ROOT_DIR, name))]
     session.pop('website_dir', None) # Clear website_dir if exist
     match session['requests']: #Match Nth page request
