@@ -25,8 +25,8 @@ def current_website_dir():
     else:
         global WEBSITE_DIRS
         try:
-            WEBSITE_DIRS.remove('Escape')
-            WEBSITE_DIRS.remove('Marvel')
+            WEBSITE_DIRS.remove(os.path.isdir(os.path.join(ROOT_DIR, 'Escape')))
+            WEBSITE_DIRS.remove(os.path.isdir(os.path.join(ROOT_DIR, 'Marvel')))
         except (ValueError, IndexError) as e:
             pass
         website_dir = random.choice(WEBSITE_DIRS)
