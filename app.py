@@ -18,15 +18,15 @@ website_dir = None
 def current_website_dir():
     session.pop('website_dir', None)
     if session['requests'] % 5 == 0:
-        session['website_dir'] = str(ROOT_DIR+"/Marvel")
+        session['website_dir'] = (os.path.join(ROOT_DIR, 'Marvel'))
     elif session['requests'] % 6 == 0:
-        session['website_dir'] = str(ROOT_DIR+"/Escape")
+        session['website_dir'] = (os.path.join(ROOT_DIR, 'Escape'))
         session.pop('requests', None)
     else:
         global WEBSITE_DIRS
         try:
-            WEBSITE_DIRS.remove(os.path.isdir(os.path.join(ROOT_DIR, 'Escape')))
-            WEBSITE_DIRS.remove(os.path.isdir(os.path.join(ROOT_DIR, 'Marvel')))
+            WEBSITE_DIRS.remove(os.path.join(ROOT_DIR, 'Marvel'))
+            WEBSITE_DIRS.remove(os.path.join(ROOT_DIR, 'Escape'))
         except (ValueError, IndexError) as e:
             pass
         session['website_dir'] = random.choice(WEBSITE_DIRS)
