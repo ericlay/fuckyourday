@@ -1,53 +1,10 @@
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fuck Your Day</title>
-    <script language="JavaScript" type="text/javascript">
-      setTimeout(function () {
-        location.replace("https://fuckyour.day/");
-      }, 7000);
-      setTimeout(7000);
-    </script>
-  </head>
-  {% block body %}
-  <style>
-    :root {
-      --blue: #0e0620;
-      --white: #fff;
-    }
-    html,
-    body {
-      height: 100%;
-    }
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "system-ui";
-      color: var(--blue);
-      font-size: 1em;
-    }
-    h1 {
-      font-size: 7.5em;
-      margin: 15px 0px;
-      font-weight: bold;
-    }
-    h2 {
-      font-weight: bold;
-    }
-    @media screen and (max-width: 768px) {
-      body {
-        display: block;
-      }
-    }
-  </style>
-  <div>
-    <h1>404</h1>
-    <h2>You're so lost.</h2>
-    <p>
-      <br />One of us has made a mistake.<br />Hang tight, let's try this again.
-    </p>
-  </div>
-  {% endblock %}
-</html>
+<!-- 404.html -->
+{% extends 'error.html' %} {% block content %}
+<div>
+  <h1>{{ error }}</h1>
+  <h2>You're so lost.</h2>
+  <p>
+    <br />One of us has made a mistake.<br />Hang tight, let's try this again.
+  </p>
+</div>
+{% endblock %}
