@@ -1,8 +1,9 @@
 import os
 import random
-from flask import Flask, send_from_directory, session, Blueprint, render_template
+from flask import Flask, send_from_directory, session, render_template
 
 app = Flask(__name__)
+app.config['TRAP_HTTP_EXCEPTIONS']=True
 app.secret_key = '420-69-LOL' # For using client side session cookies
 
 # Site choosing logic
@@ -23,20 +24,13 @@ def current_website_dir():
         case _:
             for dir in WEBSITE_DIRS: 
                 match dir: # Remove request specific pages
-                    case 'Escape':
-                        WEBSITE_DIRS.remove(dir)
-                    case 'Marvel':    
-                        WEBSITE_DIRS.remove(dir)
-                    case 'Templates':
+                    case 'Escape' | 'Marvel' | 'templates':
                         WEBSITE_DIRS.remove(dir)
             session['website_dir'] = random.choice(WEBSITE_DIRS)
 
 @app.route('/<path:filename>', methods=['GET']) # Make static files available
 def static_proxy(filename):
-    try:
-        return send_from_directory(session['website_dir'], filename)
-    except KeyError:
-        return render_template('404.html'),404
+    return send_from_directory(session['website_dir'], filename)
 
 @app.route('/', methods=['GET']) # Serve site index.html
 def index():
@@ -45,14 +39,18 @@ def index():
     else:
         session['requests'] = 1
     current_website_dir() # Choose website dir
-    try:
-        return send_from_directory(session['website_dir'], 'index.html')
-    except KeyError:
-        return render_template('404.html'),404
+    return send_from_directory(session['website_dir'], 'index.html')
 
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'),404
+@app.errorhandler(Exception) # Handle uncaught exceptions per code type
+def handle_error(e): 
+    try:
+        if e.code < 400:
+            return Flask.Response.force_type(e, Flask.request.environ)
+        elif e.code == 404:
+            return render_template('404.html', error='404'),404
+        raise e
+    except: 
+        return render_template('500.html', error='500'),500
 
 if __name__ == "__main__":
     app.run()
