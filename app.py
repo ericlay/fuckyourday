@@ -2,9 +2,9 @@ import os
 import random
 from flask import Flask, send_from_directory, session, render_template
 
-Fyourday = Flask(__name__)
-Fyourday.config['TRAP_HTTP_EXCEPTIONS']=True
-Fyourday.secret_key = '420-69-LOL' # For using client side session cookies
+app = Flask(__name__)
+app.config['TRAP_HTTP_EXCEPTIONS']=True
+app.secret_key = '420-69-LOL' # For using client side session cookies
 # Script must run from root dir containing all websites dirs 
 # OR change the ROOT_DIR path :)
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -33,11 +33,11 @@ def current_website_dir():
             else:
                 session['website_dir'] = website_choice
 
-@Fyourday.route('/<path:filename>', methods=['GET']) # Make static files available
+@app.route('/<path:filename>', methods=['GET']) # Make static files available
 def static_proxy(filename):
     return send_from_directory(os.path.join(ROOT_DIR, session['website_dir']), filename)
 
-@Fyourday.route('/', methods=['GET']) # Serve site index.html
+@app.route('/', methods=['GET']) # Serve site index.html
 def index():
     if 'requests' in session: # init requests count
         session['requests'] += 1
@@ -46,7 +46,7 @@ def index():
     current_website_dir() # Choose website dir
     return send_from_directory(os.path.join(ROOT_DIR, session['website_dir']), 'index.html')
 
-@Fyourday.errorhandler(Exception) # Handle uncaught exceptions per code
+@app.errorhandler(Exception) # Handle uncaught exceptions per code
 def handle_error(e): 
     try:
         if e.code < 400:
@@ -58,4 +58,4 @@ def handle_error(e):
         return render_template('500.html', error='500'),500
 
 if __name__ == "__main__":
-    Fyourday.run()
+    app.run()
